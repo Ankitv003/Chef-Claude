@@ -1,7 +1,12 @@
-const Header=()=>{
-    return(
-        <h1>header goes here!</h1>
-    )
-}
+import logo from "../images/chef-claude-icon.png";
 
-export default Header
+const Header = () => {
+  return (
+    <header>
+      <img src={logo} alt="chef-logo" />
+      <h1>Chef Claude</h1>
+    </header>
+  );
+};
+
+export default Header;
