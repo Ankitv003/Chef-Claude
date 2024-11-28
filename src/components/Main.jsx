@@ -8,7 +8,7 @@ const Main = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formData = new formData(e.currentTarget);
+    const formData = new FormData(e.currentTarget);
     const newIngredient = formData.get("ingredient");
     setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
   };
