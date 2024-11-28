@@ -1,4 +1,10 @@
+import { useState } from "react";
+
 const Main = () => {
+  const [ingredients, setIngredients] = useState([]);
+  const ingredientsListItems = ingredients.map((ingredient) => {
+    return <li key={ingredient}>{ingredient}</li>;
+  });
   return (
     <main>
       <form className="add-ingredients-form">
@@ -9,6 +15,7 @@ const Main = () => {
         />
         <button>Add Ingredient</button>
       </form>
+      <ul>{ingredientsListItems}</ul>
     </main>
   );
 };
