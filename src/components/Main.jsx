@@ -6,15 +6,13 @@ const Main = () => {
     return <li key={ingredient}>{ingredient}</li>;
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
+  const handleSubmit = (formData) => {
     const newIngredient = formData.get("ingredient");
     setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
   };
   return (
     <main>
-      <form onSubmit={handleSubmit} className="add-ingredients-form">
+      <form action={handleSubmit} className="add-ingredients-form">
         <input
           type="text"
           placeholder=" e.g. apple"
@@ -23,7 +21,7 @@ const Main = () => {
         />
         <button>Add Ingredient</button>
       </form>
-      <ul>{ingredientsListItems}</ul>
+      <ul> {ingredientsListItems}</ul>
     </main>
   );
 };
